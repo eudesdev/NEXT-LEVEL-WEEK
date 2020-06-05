@@ -1,0 +1,153 @@
+/* 
+     O uso da # é por causa que uso uma ID e não uma class.
+     Estrutura responsavel para coloca a imagem de fundo e o .svg
+     é uma forma de imagem que é dinamica com a pagina por motivo de ser
+     toda escrita, o no-repeat ta responsavel de que nao haja repetição 
+     do background.
+     vh e px : É dinamico;
+     vh: Ele pegara a altura e deixara em 100 
+     background-position: vw sera o eixo X e o bottom fara que grude em baixo
+*/
+#page-home {
+    height: 100vh;
+    background: url(../icones/home-background.svg) no-repeat;
+    background-position: 35vw bottom;
+}
+/*
+    Ta responsavel pela estrutura do box Header e os comandos faz que
+    a tela fique flexionada, que os itens fiquem alinhados, que tenha
+     um espaçamento entre os itens na box do Header, espaçamento do topo
+     de 48px.
+
+*/
+#page-home header {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*
+    Essa estrutura ta responsavel por da largura ao box Content
+    os comandos abaixo funcionam para deixa a largura em 90%, a largura maxima
+    chegará até 1100px e a margens ta setada 0 para margin-to e margin-bottom
+    (Margens do topo e da parte inferior) e as margens left e right estao
+    setadas para sereme automaticas.  
+*/
+#page-home .content {
+    height: 100%;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+/* Configurou a tag <a> em relação ao posicionamento do texto, definiu a cor, 
+    definiu o peso da fonte, retirou o sublinhamento. 
+*/
+#page-home header a {
+    display: flex;
+    color: var(--title-color) ;
+    font-weight: 700;
+    text-decoration: none;
+}
+/*Configuração do span para colocar a imagem com margem a direita de 16 pixels,
+    o display configurada para flex, definiu a imagem juntamente com a
+    altura e largura.  
+*/
+#page-home header a span {
+    margin-right: 16px;
+    display: flex;
+    background-image: url(../icones/log-in.svg);
+    width: 20px;
+    height: 20px;
+}
+/* 
+    Estrututra responsavel pelo main (central) nela está sendo configurada
+    maximo de largura, flex 1 seria um padrao do codigo já utilizado,
+    o display flex, conteudo centralizado e a direção do flex será em
+    coluna. 
+*/
+#page-home main {
+    max-width: 560px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/*
+    Estrutura base para <h1> onde é definido tamanho e cor
+    a cor está sendo variavel --title-color definida no root
+*/
+#page-home main h1{
+    font-size: 54px;
+    color: var(--title-color);
+}
+/*
+    Estrutura base para <p> (refere-se ao paragrafo) onde é definido
+    tamanho da fonte, defini a distancia da linha e defini a margem de cima. 
+*/
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+}
+/*
+    Estrutura base para <a> onde se defini altura, maximo da largura, largura
+    bordas, o display flexivel, alinha os itens, adiciona transição, organiza
+    a margem de cima e defini a cor com a variavel --primary-color criada em root.
+*/
+#page-home main a {
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    transition: 400ms;
+
+    background-color: var(--primary-color);
+}
+/*
+    Estrutura resposavel por uma ação, tal ação que quando passar o mouse
+    em cima da <a> a cor irá modificar
+*/
+#page-home main a:hover {
+    background-color: #2fb86e;
+}
+/*
+    Estrutura do <span> que nela se defini altura, largura, borda de cima da esquerda
+    borda de baixo da esquerda (Motivo dessa modificação nas borda é por um pixel
+    com uma coloração diferente ), display flexivel, alinhamento de itens centralizado,
+    conteudo centralizado. 
+*/
+#page-home main a span {
+    width: 72px;
+    height: 72px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+    Estrutura do <span> para que tenha uma imagem na tag sem utilizar
+    <a img=""></a> e definido altura e largura. 
+*/
+#page-home main a span::after {
+    content: "";
+    background-image: url(../icones/search.svg);
+
+    width: 20px;
+    height: 20px;
+}
+/*
+    Estrutura do <strong> responsavel por deixa a fonte forte, modificações
+    para alinhamento e cor 
+*/
+#page-home main a strong {
+    flex: 1;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,49 @@
+/*
+     Com o uso do <meta name="viewport" content="width=device-width, inital-scale=1.0">
+     podemos utiliza a ferramenta @media para definimos css para
+     outros dispositivos e as modificações abaixo estão para smartphones e 
+     tablets. Com o maximo de 900 pixel de largura.
+*/
+@media (max-width:900px) {
+    /* Definir posição x do background */
+    #page-home {
+         background-position-x: 70vw;
+    }
+    #page-home .content {
+         /* Definição para alinhamento dos textos e itens */
+         align-items: center;
+         text-align: center;
+    } 
+    #page-home header a {
+         /* Posição absoluta, distancia da parte inferior, distancia da esquerda
+              e o transform está sendo utilizado para centralização 
+         */
+         position: absolute;
+         bottom: 45px;
+         left:50%;
+         transform: translateX(-50%);
+    }
+    /*Alinhamento dos itens centralizados*/
+    #page-home main {
+         align-items: center;
+    }
+
+    #page-search-results .cards {
+     grid-template-columns: 1fr;
+    }
+    #page-search-results .cards img {
+         height: 260px;
+    }
+
+}
+@media (min-width: 1700px){
+    #page-home {
+        background-position: 40vw ;
+    }
+}
+@media (max-height: 760px) {
+    #page-home {
+        background-position-y:200px;
+    }
+}
+
