@@ -1,58 +1,40 @@
-<!DOCTYPE>
-<!--Tag HTML-->
-<html lang="pt_br">
-    <meta charset="UTF-8"> 
-    <!--Meta para caber em telas menores ou maiores-->
-    <meta name="viewport" content="width=device-width">   
-    <head>
-        <title>Ecoleta</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/main.css">
+{% extends "layout.html" %}
+
+{% set pageId = "page-home" %}
+
+ {% block title %}
+         <title>Ecoleta</title>
+ {% endblock title %}
+
+        {% block styles %}
         <link rel="stylesheet" href="styles/home.css">
         <link rel="stylesheet" href="styles/modal.css">
-        <link rel="stylesheet" href="styles/responsive.css">
-    </head>
-    <body>
+        {% endblock styles %}
 
-      <div id="page-home">
-          <div class="content">
-          <header>
-            <img src="icones/logo.svg" alt="Logomarca">
-            <a href="create-point.html">
-              <span></span>
-              Cadastre um ponto de coleta
-            </a> 
-         </header>
-           <main>
-            <h1> Seu marketplace de coleta de resíduo</h1> 
-
-            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
-        
-            <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
-            </main>                    
-          </div>
-      </div>  
-     
-
-
-      <div id="modal" class="hide">
+            {% block content %}
         <div class="content">
-          <div class="header">
-            <h1>Pontos de Coleta</h1>
-            <a href="#">Fechar</a>
-          </div>
-          <form action="search.html">
-            <label for="search">Cidade</label>
-            <div class="search field">
-              <input type="text" name="search" placeholder="Pesquise por cidade">
-              <button>
-                <img src="icones/search.svg" alt="Buscar">
-              </button>
-            </div>
-          </form>
+          <header>
+          <img src="icones/logo.svg" alt="Logomarca">
+          <a href="create-point">
+            <span></span>
+            Cadastre um ponto de coleta
+          </a> 
+          </header>
+          <main>
+          <h1> Seu marketplace de coleta de resíduo</h1> 
+
+          <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
+      
+          <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
+          </main>                    
         </div>
-      </div>
-      <script src="scripts/index.js"></script>
-    </body>
-</html>
+
+          {% endblock content %}
  
+    {% block modal %}
+          {%include "partials/modal.html" %}
+    {% endblock modal %}
+
+    {% block scripts %}
+          <script src="scripts/index.js"></script>
+      {% endblock scripts %}
